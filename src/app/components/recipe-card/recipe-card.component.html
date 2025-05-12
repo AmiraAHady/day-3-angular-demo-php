@@ -1,0 +1,17 @@
+<div class="col">
+    <div class="card">
+      <img [src]="recipeItem.image" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{recipeItem.name| uppercase}}</h5>
+        <ul>
+            @for (ingredient of recipeItem.ingredients; track $index) {
+              <li>{{ingredient}}</li>
+            }
+        </ul>
+        <h3>{{recipeItem.cookTimeMinutes |showinfo}}</h3>
+        <h3>{{recipeItem.releaseDate |date:'medium'}}</h3>
+        <button class="btn btn-danger"(click)="handelDelete(recipeItem.id)">Delete</button>
+      </div>
+    </div>
+  </div> 
+ 

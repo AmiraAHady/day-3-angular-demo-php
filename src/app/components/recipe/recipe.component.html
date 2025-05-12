@@ -1,0 +1,9 @@
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+   @for (recipe of recipeList; track $index) {
+    <!-- 1 -->
+    <app-recipe-card [recipeItem]="recipe"  (sendToParent)="deleteRecipe($event)"></app-recipe-card>
+   }
+   <!-- <app-recipe-card [singleitem]="3"  (sendToParent)="deleteRecipe($event)"></app-recipe-card> -->
+
+  </div>

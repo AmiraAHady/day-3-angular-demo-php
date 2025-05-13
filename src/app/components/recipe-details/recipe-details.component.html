@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-6">
+    <div class="card">
+      <img [src]="selectedRecipe?.image" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{ selectedRecipe?.name }}</h5>
+        <ul>
+          @for (ingredient of selectedRecipe?.ingredients; track $index) {
+          <li>{{ ingredient }}</li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

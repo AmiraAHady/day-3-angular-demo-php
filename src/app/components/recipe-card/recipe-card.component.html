@@ -1,4 +1,5 @@
 <div class="col">
+  <a [routerLink]="['/recipeDetails',recipeItem.id]">
     <div class="card">
       <img [src]="recipeItem.image" class="card-img-top" alt="...">
       <div class="card-body">
@@ -13,5 +14,6 @@
         <button class="btn btn-danger"(click)="handelDelete(recipeItem.id)">Delete</button>
       </div>
     </div>
+  </a>
   </div> 
  

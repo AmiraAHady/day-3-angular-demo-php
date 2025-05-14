@@ -1,0 +1,29 @@
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  @for (recipeItem of favList; track $index) {
+  <div class="col">
+    <!-- <a [routerLink]="['/recipeDetails',recipeItem.id]"> -->
+    <div class="card">
+      <img [src]="recipeItem.image" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{ recipeItem.name }}</h5>
+        <ul>
+          @for (ingredient of recipeItem.ingredients; track $index) {
+          <li>{{ ingredient }}</li>
+          }
+        </ul>
+        <h3>{{ recipeItem.cookTimeMinutes }}</h3>
+        <h3>{{ recipeItem.releaseDate }}</h3>
+        <!-- <button class="btn btn-danger"(click)="handelDelete(recipeItem.id)">Delete</button> -->
+        <button
+          class="btn btn-danger m-1"
+          (click)="removeFromFavorite(recipeItem)"
+        >
+          Remove
+        </button>
+      </div>
+    </div>
+    <!-- </a> -->
+  </div>
+
+  }
+</div>

@@ -1,5 +1,5 @@
 <div class="col">
-  <a [routerLink]="['/recipeDetails',recipeItem.id]">
+  <!-- <a [routerLink]="['/recipeDetails',recipeItem.id]"> -->
     <div class="card">
       <img [src]="recipeItem.image" class="card-img-top" alt="...">
       <div class="card-body">
@@ -11,9 +11,11 @@
         </ul>
         <h3>{{recipeItem.cookTimeMinutes |showinfo}}</h3>
         <h3>{{recipeItem.releaseDate |date:'medium'}}</h3>
-        <button class="btn btn-danger"(click)="handelDelete(recipeItem.id)">Delete</button>
+        <!-- <button class="btn btn-danger"(click)="handelDelete(recipeItem.id)">Delete</button> -->
+        <button class="btn btn-warning m-1" (click)="addToFavorite(recipeItem)">Add To Favorite</button>
+        <button class="btn btn-success"(click)="moveToDetails(recipeItem.id)">Show</button>
       </div>
     </div>
-  </a>
+  <!-- </a> -->
   </div> 
  

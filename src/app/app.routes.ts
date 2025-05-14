@@ -5,6 +5,8 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 import { ProductsComponent } from './components/products/products.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
+import { authGuard } from './guards/auth-guard.guard';
+import { FavRecipeComponent } from './components/fav-recipe/fav-recipe.component';
 
 export const routes: Routes = [
   //home route
@@ -12,7 +14,8 @@ export const routes: Routes = [
   { path: 'about', component: AboutUsComponent ,title:'About Page'},
   { path: 'recipeDetails/:id', component: RecipeDetailsComponent },
   { path: 'contact', component: ContactUsComponent,title:'Contact Page' },
-  { path: 'products', component: ProductsComponent,title:'Products Page' },
+  { path: 'products', component: ProductsComponent,title:'Products Page',canActivate:[authGuard] },
+  { path: 'fav', component: FavRecipeComponent,title:'Fav Page' },
   { path: '', redirectTo: '/recipe', pathMatch: 'full' },
   // { path: '', component:RecipeComponent },
   // wildcard route
